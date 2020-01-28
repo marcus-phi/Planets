@@ -1,4 +1,5 @@
 import 'package:Planets/ui/home/GradientAppBar.dart';
+import 'package:Planets/ui/home/HomePageBody.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,7 +9,8 @@ class HomePage extends StatelessWidget {
     return new Scaffold(
       body: new Column(
         children: <Widget>[
-          new GradientAppBar('treva')
+          new GradientAppBar('treva'),
+          new HomePageBody()
         ],
       )
     );
