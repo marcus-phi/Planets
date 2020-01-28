@@ -1,11 +1,19 @@
+import 'package:Planets/podo/Planet.dart';
 import 'package:Planets/ui/home/PlanetRow.dart';
 import 'package:flutter/material.dart';
 
-class HomePageBody extends StatelessWidget {
+import 'PlanetRow.dart';
 
+class HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new PlanetRow();
+    return Column(
+      children: <Widget>[
+        new PlanetRow(planets[0]),
+        new PlanetRow(planets[1]),
+        new PlanetRow(planets[2]),
+        new PlanetRow(planets[3]),
+      ],
+    );
   }
-
 }
