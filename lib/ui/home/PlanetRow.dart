@@ -18,6 +18,60 @@ class PlanetRow extends StatelessWidget {
       ),
     );
 
+    final baseTextStyle = const TextStyle(
+      fontFamily: 'Poppins'
+    );
+
+    final headerTextStyle = baseTextStyle.copyWith(
+      color: Colors.white,
+      fontSize: 18.0,
+      fontWeight: FontWeight.w600
+    );
+
+    final regularTextStyle = baseTextStyle.copyWith(
+      color: const Color(0xffb6b2df),
+      fontSize: 9.0,
+      fontWeight: FontWeight.w400
+    );
+
+    final subHeaderTextStyle = regularTextStyle.copyWith(
+      fontSize: 12.0
+    );
+
+    Widget _planetValue({String value, String image}) {
+      return new Row(
+        children: <Widget>[
+          new Image.asset(image, height: 12.0),
+          new Container(width: 8.0),
+          new Text(value, style: regularTextStyle)
+        ]
+      );
+    }
+
+    final planetCardContent = new Container(
+      margin: new EdgeInsets.fromLTRB(76.0, 16.0, 16.0, 16.0),
+      constraints: new BoxConstraints.expand(),
+      child: new Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          new Container(height: 4.0),
+          new Text(planet.name, style: headerTextStyle),
+          new Container(height: 10.0),
+          new Text(planet.location, style: subHeaderTextStyle),
+          new Container(
+            margin: new EdgeInsets.symmetric(vertical: 8.0),
+            height: 2.0,
+            width:  18.0,
+            color: new Color(0xff00c6ff)
+          ),
+          new Row(children: <Widget>[
+            new Expanded(child: _planetValue(value:planet.distance, image: "assets/img/ic_distance.png")),  
+            new Expanded(child: _planetValue(value:planet.gravity, image: "assets/img/ic_gravity.png")),  
+          ],)
+        ]
+      )
+    );
+
     final planetCard = new Container(
       height: 124.0,
       margin: new EdgeInsets.only(left: 46.0),
@@ -31,6 +85,7 @@ class PlanetRow extends StatelessWidget {
                 blurRadius: 10.0,
                 offset: new Offset(0.0, 10.0))
           ]),
+      child: planetCardContent,
     );
 
     return new Container(
