@@ -7,13 +7,25 @@ import 'PlanetRow.dart';
 class HomePageBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        new PlanetRow(planets[0]),
-        new PlanetRow(planets[1]),
-        new PlanetRow(planets[2]),
-        new PlanetRow(planets[3]),
-      ],
+    return new Expanded(
+      child: new Container(
+        color: new Color(0xFF736AB7),
+        child: new CustomScrollView(
+          scrollDirection: Axis.vertical,
+          slivers: <Widget>[
+            new SliverPadding(
+              padding: const EdgeInsets.symmetric(vertical: 16.0),
+              sliver: new SliverFixedExtentList(
+                itemExtent: 156.0,
+                delegate: new SliverChildBuilderDelegate(
+                  (context, index) => new PlanetRow(planets[index]),
+                  childCount: planets.length
+                )
+              )
+            )
+          ],
+        )
+      ),
     );
   }
 }
