@@ -1,8 +1,6 @@
 import 'package:Planets/podo/Planet.dart';
-import 'package:Planets/ui/home/PlanetRow.dart';
+import 'package:Planets/ui/home/PlanetSummary.dart';
 import 'package:flutter/material.dart';
-
-import 'PlanetRow.dart';
 
 class HomePageBody extends StatelessWidget {
   @override
@@ -18,7 +16,7 @@ class HomePageBody extends StatelessWidget {
               sliver: new SliverFixedExtentList(
                 itemExtent: 156.0,
                 delegate: new SliverChildBuilderDelegate(
-                  (context, index) => new PlanetRow(planets[index]),
+                  (context, index) => new PlanetSummary(planets[index]),
                   childCount: planets.length
                 )
               )
