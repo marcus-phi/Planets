@@ -66,7 +66,7 @@ class DetailPage extends StatelessWidget {
             children: <Widget>[
               new Text(_overviewTitle, style: Style.headerTextStyle),
               new Separator(),
-              new Text(planet.description, style: Style.regularTextStyle)
+              new Text(planet.description, style: Style.commonTextStyle)
             ],
           )
         )

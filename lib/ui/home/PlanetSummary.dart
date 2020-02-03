@@ -33,7 +33,7 @@ class PlanetSummary extends StatelessWidget {
         children: <Widget>[
           new Image.asset(image, height: 12.0),
           new Container(width: 8.0),
-          new Text(value, style: Style.regularTextStyle)
+          new Text(value, style: Style.smallTextStyle)
         ]
       );
     }
@@ -45,9 +45,9 @@ class PlanetSummary extends StatelessWidget {
         crossAxisAlignment: horizontal ? CrossAxisAlignment.start : CrossAxisAlignment.center,
         children: <Widget>[
           new Container(height: 4.0),
-          new Text(planet.name, style: Style.headerTextStyle),
-          new Container(height: 10.0),
-          new Text(planet.location, style: Style.subHeaderTextStyle),
+          new Text(planet.name, style: Style.titleTextStyle),
+          new Container(height: 8.0),
+          new Text(planet.location, style: Style.commonTextStyle),
           new Separator(),
           new Row(
             mainAxisAlignment: MainAxisAlignment.center,
