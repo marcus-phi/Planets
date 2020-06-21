@@ -32,7 +32,7 @@ class PlanetSummary extends StatelessWidget {
       return new Row(
         children: <Widget>[
           new Image.asset(image, height: 12.0),
-          new Container(width: 8.0),
+          new Container(width: 4.0),
           new Text(value, style: Style.smallTextStyle)
         ]
       );
